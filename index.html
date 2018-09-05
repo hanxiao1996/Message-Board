@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>留言板</title>
+    <style>
+    	.box{
+    		width: 550px;
+    		height: auto;
+    		margin: 100px auto 0;
+    		border: 1px solid red;
+    	}
+        .box1{
+            width: 500px;
+            height: auto;
+            margin: 0 auto;
+        }
+        .box1 h2{
+            font-size: 20px;
+            text-align: center;
+        }
+
+        textarea{
+        	margin-top: 50px;
+        	overflow: hidden;
+            display: block;
+            width: 500px;
+            height:200px;
+            background: #FFFFFF;
+            margin: 0 auto;
+            border: 1px solid red;
+            resize: none;
+            outline: none;
+            color: red;
+        }
+        .btn{
+            display: block;
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="box">
+<div class="box1">
+    <h2>留言板</h2>
+    <hr>
+</div>
+
+<textarea placeholder="请留言..."></textarea>
+<button style="background-color: #fdffc3;" class="btn">提交</button>
+</div>
+</body>
+</html>
+<script>
+    let box1=document.querySelector(".box1");
+    let box2=document.querySelector("textarea");
+    let button=document.querySelector("button");
+    // console.log(box1,box2,button);
+    button.onclick=function(){
+        let box=document.createElement("div");
+        let style=document.createAttribute("style");
+        style.nodeValue=`color:red;margin-bottom:20px;background-color:#81FAE0;width:500px;line-height:30px;heihgt:30px;border-bottom:1px solid red;`
+          box.setAttributeNode(style);
+                         box.innerText=box2.value
+                         box2.value=""
+                    box1.append(box)
+
+    }
+</script>
